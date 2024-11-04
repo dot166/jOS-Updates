@@ -31,8 +31,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with :
-          lfs: true
+      - name: Pull Update File from Releases
+        shell: bash
+        run: |
+          export VERSION=$( cat RELEASE )
+          wget --no-parent https://github.com/dot166/jOS-Updates/releases/download/$VERSION/oriole-ota_update-$VERSION.zip
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
