@@ -34,7 +34,8 @@ jobs:
       - name: Pull Update File from Releases
         shell: bash
         run: |
-          export VERSION=$( cat RELEASE )
+          release=$( cat oriole-stable )
+          export VERSION=${release// */}
           wget --no-parent https://github.com/dot166/jOS-Updates/releases/download/$VERSION/oriole-ota_update-$VERSION.zip
       - name: Setup Pages
         uses: actions/configure-pages@v5
