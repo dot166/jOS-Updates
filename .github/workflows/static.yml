@@ -31,13 +31,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: wait for release script
-        shell: bash
-        run: |
-          sleep 600s
-      - name: Update Checkout
-        shell: bash
-        run: git pull
       - name: Pull Update File from Releases
         shell: bash
         run: |
