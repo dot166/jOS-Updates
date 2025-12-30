@@ -38,12 +38,18 @@ jobs:
       - name: Update Checkout
         shell: bash
         run: git pull
-      - name: Pull Update File from Releases
+      - name: Pull Oriole Update File from Releases
         shell: bash
         run: |
           release=$( cat oriole-stable )
           export VERSION=${release// */}
           wget --no-parent https://github.com/dot166/jOS-Updates/releases/download/$VERSION/oriole-ota_update-$VERSION.zip
+      - name: Pull Felix Update File from Releases
+        shell: bash
+        run: |
+          release=$( cat felix-stable )
+          export VERSION=${release// */}
+          wget --no-parent https://github.com/dot166/jOS-Updates/releases/download/$VERSION/felix-ota_update-$VERSION.zip
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

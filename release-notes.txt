@@ -1,0 +1,7 @@
+2025122900
+
+ported to GrapheneOS 2025122500 (Android 16 QPR2), (changelog for that release is here: https://grapheneos.org/releases#2025122500)
+adds support for felix (Pixel Fold)
+drop support for oriole (Pixel 6)
+adds kaomoji support in LatinIME
+always use stable repo in updater as i dont support multiple release channels
