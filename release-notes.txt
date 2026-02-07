@@ -1,7 +1,7 @@
-2025122900
+2026020700
 
-ported to GrapheneOS 2025122500 (Android 16 QPR2), (changelog for that release is here: https://grapheneos.org/releases#2025122500)
-adds support for felix (Pixel Fold)
-drop support for oriole (Pixel 6)
-adds kaomoji support in LatinIME
-always use stable repo in updater as i dont support multiple release channels
+ported to GrapheneOS 2026020600 (Android 16 QPR2), (changelog for that release is here: https://grapheneos.org/releases#2026020600)
+make AOSP Music app useful again
+split kaomoji and emoji in LatinIME
+finally add vibrate on DND
+add some CLs from MikuUI (https://github.com/dot166/platform_frameworks_base/commit/e8aabc6b83267b76fbbe38f7e28a8a4bbad18119.patch and https://github.com/dot166/platform_frameworks_base/commit/b150c8b3f3f78768cf72ab86fc455d6a187ae267.patch)
