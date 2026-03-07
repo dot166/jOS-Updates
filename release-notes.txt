@@ -1,3 +1,8 @@
-2026020800
+2026030700
 
-bug fixes
+ported to GrapheneOS 2026030200 (Android 16 QPR2), (changelog for that release is here: https://grapheneos.org/releases#2026030200)
+Bring some apps closer to upstream (i dont want 20000 merge conflics and 50 added features that i wont use)
+Remove non working features
+Mirror lineage-23.2 branch for Etar and Recorder
+Add Japanese input and gradle support to LatinIME
+Fix bugs with music
