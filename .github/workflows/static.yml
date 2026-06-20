@@ -37,19 +37,26 @@ jobs:
           sleep 600s
       - name: Update Checkout
         shell: bash
-        run: git pull
-      - name: Pull Oriole Update File from Releases
+        run: git pullsteps:
+      - name: Pull Update Files from Releases
+        strategy:
+          matrix:
+            device: [oriole, felix]
+            channel: [stable, beta]
         shell: bash
         run: |
-          release=$( cat oriole-stable )
-          export VERSION=${release// */}
-          wget --no-parent https://github.com/dot166/jOS-Updates/releases/download/$VERSION/oriole-ota_update-$VERSION.zip
-      - name: Pull Felix Update File from Releases
-        shell: bash
-        run: |
-          release=$( cat felix-stable )
-          export VERSION=${release// */}
-          wget --no-parent https://github.com/dot166/jOS-Updates/releases/download/$VERSION/felix-ota_update-$VERSION.zip
+          FILE_PATH="${{ matrix.device }}-${{ matrix.channel }}"
+
+          # Check if the file exists before trying to read it
+          if [ -f "$FILE_PATH" ]; then
+            release=$(cat "$FILE_PATH")
+            export VERSION=${release// */}
+
+            echo "Downloading ${{ matrix.device }} ($_CHANNEL)..."
+            wget --no-parent "https://github.com/dot166/jOS-Updates/releases/download/$VERSION/${{ matrix.device }}-ota_update-$VERSION.zip"
+          else
+            echo "No update file found for $FILE_PATH, skipping."
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
