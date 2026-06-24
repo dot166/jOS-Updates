@@ -1,4 +1,6 @@
-2026062001
+2026062200
 
-Fix updater
-ORIOLE ONLY
+First Android 17 experimental build
+rebased onto GrapheneOS 2026061800 (Android 17 (AOSP 37))
+drop features that were buggy in 16-QPR2 or that google implemented themselves
+ORIOLE ONLY, FELIX WILL COME SOON
