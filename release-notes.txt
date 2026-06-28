@@ -1,6 +1,5 @@
-2026062200
+2026062700
 
-First Android 17 experimental build
-rebased onto GrapheneOS 2026061800 (Android 17 (AOSP 37))
-drop features that were buggy in 16-QPR2 or that google implemented themselves
-ORIOLE ONLY, FELIX WILL COME SOON
+First Android 17 stable build
+rebased onto GrapheneOS 2026062300 (Android 17 (AOSP 37))
+fixed most issues from experimental builds, helpline index still broken, waiting for lineage to fix that as that is one of their features
