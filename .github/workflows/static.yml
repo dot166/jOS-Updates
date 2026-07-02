@@ -34,7 +34,7 @@ jobs:
       - name: wait for release script
         shell: bash
         run: |
-          sleep 1200s
+          sleep 900s
       - name: Update Checkout
         shell: bash
         run: git pull
